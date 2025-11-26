@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Новогодний кроссворд</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #e0f7fa, #b3e5fc);
+      text-align: center;
+      padding: 20px;
+      color: #01579b;
+    }
+    h1 {
+      color: #d50000;
+      text-shadow: 1px 1px 2px #fff;
+      margin-bottom: 10px;
+    }
+    .grid-container {
+      display: inline-block;
+      margin: 20px auto;
+      background: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    table.grid {
+      border-collapse: collapse;
+      margin: auto;
+    }
+    .grid td {
+      width: 36px;
+      height: 36px;
+      border: 1px solid #222;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: bold;
+      font-size: 18px;
+      background-color: #ffffff;
+    }
+    .black {
+      background-color: #333333 !important;
+    }
+    .clues {
+      max-width: 600px;
+      margin: 25px auto;
+      text-align: left;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .clues h2 {
+      margin-top: 0;
+      color: #0288d1;
+    }
+    .clue {
+      margin: 6px 0;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎄 Новогодний кроссворд 🎁</h1>
+
+  <div class="grid-container">
+    <table class="grid">
+      <!-- 10x10 grid -->
+      <tr>
+        <td class="black"></td><td class="black"></td><td>С</td><td>Н</td><td>Е</td><td>Г</td><td>У</td><td>Р</td><td>О</td><td>Ч</td>
+      </tr>
+      <tr>
+        <td class="black"></td><td class="black"></td><td>А</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>К</td>
+      </tr>
+      <tr>
+        <td class="black"></td><td class="black"></td><td>Н</td><td class="black"></td><td>П</td><td>О</td><td>Д</td><td>А</td><td>Р</td><td>О</td>
+      </tr>
+      <tr>
+        <td>Ё</td><td>Л</td><td>К</td><td>А</td><td>О</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>К</td>
+      </tr>
+      <tr>
+        <td class="black"></td><td class="black"></td><td>А</td><td class="black"></td><td>К</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>А</td>
+      </tr>
+      <tr>
+        <td>З</td><td>В</td><td>Е</td><td>З</td><td>Д</td><td>А</td><td class="black"></td><td class="black"></td><td class="black"></td><td>Ч</td>
+      </tr>
+      <tr>
+        <td>В</td><td class="black"></td><td>Г</td><td class="black"></td><td>С</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>К</td>
+      </tr>
+      <tr>
+        <td>Е</td><td class="black"></td><td>О</td><td class="black"></td><td>Н</td><td>Е</td><td>Г</td><td>О</td><td>В</td><td>И</td>
+      </tr>
+      <tr>
+        <td>Д</td><td class="black"></td><td>В</td><td class="black"></td><td>Е</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>К</td>
+      </tr>
+      <tr>
+        <td>А</td><td>М</td><td>О</td><td>Р</td><td>О</td><td>З</td><td>К</td><td>О</td><td>Н</td><td>Ь</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="clues">
+    <h2>Подсказки</h2>
+    <h3>По горизонтали:</h3>
+    <div class="clue">3. Внучка Деда Мороза — <i>Снегурочка</i></div>
+    <div class="clue">4. Новогоднее дерево — <i>Ёлка</i></div>
+    <div class="clue">5. То, что лежит под ёлкой — <i>Подарок</i></div>
+    <div class="clue">6. Снежный человечек — <i>Снеговик</i></div>
+    <div class="clue">9. Тёплая зимняя головная одежда — <i>Шапка</i></div>
+    <div class="clue">10. На них катаются по льду — <i>Коньки</i></div>
+
+    <h3>По вертикали:</h3>
+    <div class="clue">1. На них спускаются с горки — <i>Санки</i></div>
+    <div class="clue">2. Украшение на ёлку — <i>Шар</i></div>
+    <div class="clue">7. Сияет на верхушке ёлки — <i>Звезда</i></div>
+    <div class="clue">8. «Не тронь меня!» — говорит … — <i>Мороз</i></div>
+  </div>
+
+  <footer>
+    Слова кроссворда: санки, снегурочка, ёлка, подарок, снеговик, шапка, шар, звезда, мороз, коньки
+  </footer>
+</body>
+</html>
