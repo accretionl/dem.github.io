@@ -163,6 +163,7 @@
 </html>
 
 
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -194,12 +195,14 @@
             font-weight: bold;
             color: #27ae60;
             font-size: 1.1em;
+            word-break: break-all;
         }
         .note {
             background-color: #fff8e1;
             padding: 10px;
             border-left: 4px solid #ffc107;
             margin: 10px 0;
+            border-radius: 4px;
         }
         .date {
             text-align: center;
@@ -208,13 +211,37 @@
             margin-bottom: 20px;
             font-size: 1.05em;
         }
+        .form-group {
+            margin: 10px 0;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
     <div class="date">17 января 2026 г.</div>
 
     <h1>Решение задачи по шифру Цезаря</h1>
-    
+
+    <!-- Задание 1 -->
     <div class="task">
         <h2>1. Определение ключей шифра</h2>
         <p><strong>а. АПЕЛЬСИН → САЦЬНВЩЮ</strong></p>
@@ -227,6 +254,7 @@
         </div>
     </div>
 
+    <!-- Задание 2 -->
     <div class="task">
         <h2>2. Расшифровка сообщений</h2>
         <p><strong>а. ФХНЗКЧ</strong></p>
@@ -238,11 +266,70 @@
         </div>
     </div>
 
+    <!-- Задание 3 -->
     <div class="task">
         <h2>3. Шифрование фамилии</h2>
         <p>Фамилия: <strong>Родина</strong></p>
         <p>Ключ: <strong>k = 10</strong></p>
         <p>Зашифрованный результат: <span class="result">ЩЦНСХК</span></p>
     </div>
+
+    <!-- Интерактивный калькулятор -->
+    <div class="task">
+        <h2>🔧 Интерактивный шифратор/дешифратор Цезаря</h2>
+        <div class="form-group">
+            <label for="text">Текст:</label><br>
+            <input type="text" id="text" placeholder="Введите текст" style="width: 100%; max-width: 500px;">
+        </div>
+        <div class="form-group">
+            <label for="key">Ключ (0–32):</label><br>
+            <input type="number" id="key" min="0" max="32" value="5" style="width: 80px;">
+        </div>
+        <div class="form-group">
+            <button onclick="encrypt()">Зашифровать</button>
+            <button onclick="decrypt()">Расшифровать</button>
+        </div>
+        <div class="form-group">
+            <label>Результат:</label><br>
+            <pre id="result">...</pre>
+        </div>
+    </div>
+
+    <script>
+        // Русский алфавит без Ё (33 буквы)
+        const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+        
+        function caesar(text, key, encrypt = true) {
+            let result = "";
+            for (let char of text.toUpperCase()) {
+                if (alphabet.includes(char)) {
+                    let index = alphabet.indexOf(char);
+                    let newIndex = encrypt ? (index + key) % 33 : (index - key + 33) % 33;
+                    result += alphabet[newIndex];
+                } else {
+                    result += char; // сохраняем пробелы и знаки препинания
+                }
+            }
+            return result;
+        }
+
+        function encrypt() {
+            const text = document.getElementById("text").value;
+            const key = parseInt(document.getElementById("key").value);
+            const result = caesar(text, key, true);
+            document.getElementById("result").textContent = result;
+        }
+
+        function decrypt() {
+            const text = document.getElementById("text").value;
+            const key = parseInt(document.getElementById("key").value);
+            const result = caesar(text, key, false);
+            document.getElementById("result").textContent = result;
+        }
+    </script>
+
+    <footer style="margin-top: 30px; text-align: center; color: #7f8c8d;">
+        <p>© 2026 — Решение задачи по шифру Цезаря</p>
+    </footer>
 </body>
 </html>
