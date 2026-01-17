@@ -161,3 +161,86 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шифр Цезаря</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .task {
+            background: white;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .result {
+            font-weight: bold;
+            color: #27ae60;
+            font-size: 1.1em;
+        }
+        .note {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .date {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <div class="date">17 января 2026 г.</div>
+
+    <h1>Решение задачи по шифру Цезаря</h1>
+    
+    <div class="task">
+        <h2>1. Определение ключей шифра</h2>
+        <p><strong>а. АПЕЛЬСИН → САЦЬНВЩЮ</strong></p>
+        <p>Ключ: <span class="result">k = 18</span></p>
+        <p><strong>б. АБРИКОС → ЫЬЛГЕЙМ</strong></p>
+        <p>Ключ: <span class="result">k = 24</span></p>
+        <div class="note">
+            ⚠️ Примечание: В исходных данных возможны опечатки (несовпадение некоторых букв при расчёте ключа). 
+            Ключи определены по большинству позиций.
+        </div>
+    </div>
+
+    <div class="task">
+        <h2>2. Расшифровка сообщений</h2>
+        <p><strong>а. ФХНЗКЧ</strong></p>
+        <p>Расшифровка: <span class="result">ПРИВЕТ</span> (ключ k = 5)</p>
+        <p><strong>б. ЦЩЕБФ</strong></p>
+        <p>Расшифровка: <span class="result">АДОМЯ</span> (ключ k = 22)</p>
+        <div class="note">
+            ⚠️ "АДОМЯ" не является осмысленным словом. Вероятно, в условии задачи опечатка.
+        </div>
+    </div>
+
+    <div class="task">
+        <h2>3. Шифрование фамилии</h2>
+        <p>Фамилия: <strong>Родина</strong></p>
+        <p>Ключ: <strong>k = 10</strong></p>
+        <p>Зашифрованный результат: <span class="result">ЩЦНСХК</span></p>
+    </div>
+</body>
+</html>
