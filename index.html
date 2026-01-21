@@ -62,6 +62,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       position: relative;
       z-index: 1; /* поверх снега */
+      margin-top: 30px;
     }
 
     h2 {
@@ -82,8 +83,34 @@
       margin: 15px 0;
     }
 
-    /* Стили для остальных блоков (встроенные, как в оригинале) */
-    /* ... они ниже в соответствующих div.style ... */
+    code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+
+    pre {
+      background: #f8f9fa;
+      padding: 14px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border-left: 3px solid #3498db;
+      margin: 16px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .zz {
+      font-family: monospace;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-left: 3px solid #ccc;
+      display: block;
+      margin: 1em 0;
+    }
   </style>
 </head>
 <body>
@@ -95,12 +122,11 @@
     <p>Видео -</p>
     <video width="640" height="360" controls>
       <source src="video.mp4" type="video/mp4">
-      newTree.mp4
       Ваш браузер не поддерживает воспроизведение видео.
     </video>
     
     <h2>3 декабря, 2025</h2>
-    <img src="Icons/icons8.png" alt="Новый год">
+    <img src="Icons/icons8.png" alt="Новый год" style="max-width:100%; height:auto;">
     <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь.</a></p>
     
     <h2>15 октября, 2025</h2>
@@ -120,7 +146,6 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.7;
     color: #333;
-    margin-top: 30px;
   ">
     <div style="text-align: center; margin-bottom: 25px; font-size: 1em;">
       <a href="mailto:alyonaroduna@gmail.com" style="color: #2980b9; text-decoration: none; font-weight: bold; font-size: 1.1em;">Напишите мне</a>
@@ -153,14 +178,14 @@
 
       <h3>4. Поддомены</h3>
       <p>Могут быть нескольких уровней:
-        <ul style="padding-left: 20px;">
+        <ul>
           <li><code>service.example.com</code> — сервис или подразделение</li>
           <li><code>blog.service.example.com</code> — блог внутри этого сервиса</li>
         </ul>
       </p>
 
       <h2>Визуальная структура</h2>
-      <pre style="background: #f8f9fa; padding: 14px; border-radius: 6px; overflow-x: auto; border-left: 3px solid #3498db; margin: 16px 0;">.
+      <pre>.
 └── com
     └── example
         └── service
@@ -168,7 +193,7 @@
 </pre>
 
       <h2>Зачем это знать?</h2>
-      <ul style="padding-left: 20px;">
+      <ul>
         <li>Для настройки DNS и хостинга</li>
         <li>Для организации микросервисной архитектуры</li>
         <li>Для повышения безопасности (например, через изоляцию cookie по поддоменам)</li>
@@ -188,7 +213,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
     color: #333;
-    margin-top: 30px;
   ">
     <div style="text-align: center; font-style: italic; color: #7f8c8d; margin-bottom: 20px; font-size: 1.05em;">
       17 января 2026 г.
@@ -255,40 +279,8 @@
     </footer>
   </div>
 
-  <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой блог</title>
-    <style>
-        body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-        }
-        h2 {
-            margin-top: 1.5em;
-            color: #333;
-        }
-        p {
-            margin-bottom: 1em;
-        }
-        .zz {
-            font-family: monospace;
-            background-color: #f9f9f9;
-            padding: 10px;
-            border-left: 3px solid #ccc;
-        }
-        sup {
-            font-size: 0.8em;
-        }
-    </style>
-</head>
-<body>
+  <!-- Четвёртая статья: RSA -->
+  <div class="page">
     <h2>21 января 2026</h2>
     <p class="zz">
         1. Простые числа: p = 5, q = 7<br>
@@ -314,5 +306,39 @@
         Пример реального n числа из 700 десятичных цифр:<br>
         98765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210987654321098765432109876543210......
     </p>
+  </div>
+
+  <!-- JavaScript для шифра Цезаря -->
+  <script>
+    const ALPHABET = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+    const ALPHABET_SIZE = ALPHABET.length;
+
+    function caesar(text, shift, decrypt = false) {
+      if (decrypt) shift = -shift;
+      let result = '';
+      for (let char of text.toUpperCase()) {
+        const idx = ALPHABET.indexOf(char);
+        if (idx === -1) {
+          result += char;
+        } else {
+          const newIndex = (idx + shift + ALPHABET_SIZE) % ALPHABET_SIZE;
+          result += ALPHABET[newIndex];
+        }
+      }
+      return result;
+    }
+
+    function encrypt() {
+      const text = document.getElementById('text').value;
+      const key = parseInt(document.getElementById('key').value) || 0;
+      document.getElementById('result').textContent = caesar(text, key, false);
+    }
+
+    function decrypt() {
+      const text = document.getElementById('text').value;
+      const key = parseInt(document.getElementById('key').value) || 0;
+      document.getElementById('result').textContent = caesar(text, key, true);
+    }
+  </script>
 </body>
 </html>
