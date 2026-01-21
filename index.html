@@ -255,45 +255,38 @@
     </footer>
   </div>
 
-  <script>
-    const alphabet = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    
-    function caesar(text, key, encrypt = true) {
-      let result = "";
-      for (let char of text.toUpperCase()) {
-        if (alphabet.includes(char)) {
-          let index = alphabet.indexOf(char);
-          let newIndex = encrypt ? (index + key) % 33 : (index - key + 33) % 33;
-          result += alphabet[newIndex];
-        } else {
-          result += char;
-        }
-      }
-      return result;
-    }
-
-    function encrypt() {
-      const text = document.getElementById("text").value;
-      const key = parseInt(document.getElementById("key").value) || 0;
-      document.getElementById("result").textContent = caesar(text, key, true);
-    }
-
-    function decrypt() {
-      const text = document.getElementById("text").value;
-      const key = parseInt(document.getElementById("key").value) || 0;
-      document.getElementById("result").textContent = caesar(text, key, false);
-    }
-  </script>
-</body>
-</html> 
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой блог</title>
-    <!-- Раскомментируйте строку ниже, если у вас есть файл стилей -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+        }
+        h2 {
+            margin-top: 1.5em;
+            color: #333;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        .zz {
+            font-family: monospace;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+        }
+        sup {
+            font-size: 0.8em;
+        }
+    </style>
 </head>
 <body>
     <h2>21 января 2026</h2>
