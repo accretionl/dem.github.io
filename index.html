@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мой блог</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      margin: 30px 0 15px 0;
+    }
+    h2 {
+      color: #2c3e50;
+      margin: 25px 0 10px 0;
+      font-size: 1.3em;
+    }
+    h3 {
+      color: #34495e;
+      margin: 20px 0 8px 0;
+      font-size: 1.1em;
+    }
+    p {
+      margin: 8px 0;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+      color: #c7254e;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 12px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    ul, ol {
+      margin: 10px 0;
+      padding-left: 25px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    blockquote {
+      border-left: 3px solid #3498db;
+      margin: 15px 0;
+      padding-left: 15px;
+      color: #555;
+      font-style: italic;
+    }
+    .date {
+      color: #7f8c8d;
+      font-weight: bold;
+      margin: 5px 0 15px 0;
+    }
+    .note {
+      background-color: #fff8e1;
+      padding: 10px 15px;
+      border-left: 4px solid #ffc107;
+      margin: 15px 0;
+      border-radius: 0 4px 4px 0;
+      font-size: 0.95em;
+    }
+    .result {
+      font-weight: bold;
+      color: #27ae60;
+    }
+    .code {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 12px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+    }
+    .good {
+      color: #27ae60;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+      text-align: center;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+    video, img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Мой блог</h1>
+
+  <!-- Нейронная сеть — главная тема -->
+  <h2>28 марта, 2026</h2>
+  <p class="date">📅 Дата публикации: 28.03.2026</p>
+  
+  <h3>📊 Результаты добавления числового признака</h3>
+  <p>В модель нейронной сети был добавлен дополнительный числовой признак. Значения ошибок:</p>
+  
+  <table>
+    <tr><th>Метрика</th><th>До</th><th>После</th><th>Изменение</th></tr>
+    <tr><td><strong>MSE</strong></td><td>0.0520</td><td>0.0345</td><td class="good">−33.7%</td></tr>
+    <tr><td><strong>MAE</strong></td><td>0.1850</td><td>0.1420</td><td class="good">−23.2%</td></tr>
+    <tr><td><strong>RMSE</strong></td><td>0.2280</td><td>0.1857</td><td class="good">−18.6%</td></tr>
+  </table>
+  
+  <div class="note">
+    <strong>Вывод:</strong> Добавление признака снизило ошибку предсказания. 
+    Нейросеть успешно использовала новую информацию для уточнения весов.
+  </div>
+
+  <h3>🔍 Логика работы нейросети (простыми словами)</h3>
+  <p>Если вы знакомы с <strong>линейной регрессией</strong> и <strong>деревом решений</strong>, нейросеть понять легко — это их эволюция.</p>
+  
+  <p><strong>Сравнение с линейной регрессией:</strong> Регрессия: <code>y = w₁x₁ + w₂x₂ + b</code> — просто взвешенная сумма. Нейросеть делает то же самое, но добавляет <strong>функцию активации</strong> (например, ReLU). Это позволяет моделировать нелинейные зависимости.</p>
+  
+  <p><strong>Сравнение с деревом решений:</strong> Дерево задаёт жёсткие вопросы: «Если площадь &gt; 50 → влево». Нейросеть создаёт <strong>плавные переходы</strong> — как если бы тысячи маленьких экспертов голосовали за результат.</p>
+  
+  <p><strong>Обучение:</strong> Модель делает прогноз → вычисляет ошибку → методом <strong>обратного распространения</strong> корректирует веса → повторяет.</p>
+  
+  <div class="note">
+    <strong>Аналогия:</strong><br>
+    📊 Регрессия — один эксперт с линейкой.<br>
+    🌲 Дерево — менеджер с чек-листом.<br>
+    🧠 Нейросеть — совет директоров, где каждый нейрон вносит взвешенный вклад.
+  </div>
+
+  <h3>💻 Пример кода</h3>
+  <div class="code">
+# Добавление признака
+X_new = np.hstack([X_old, new_feature])
+
+# Масштабирование
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X_new)
+
+# Модель
+model = Sequential([
+    Dense(16, activation='relu', input_shape=(3,)),
+    Dense(8, activation='relu'),
+    Dense(1)
+])
+model.compile(optimizer='adam', loss='mse')
+model.fit(X_scaled, y, epochs=50)
+  </div>
+
+  <hr>
+
+  <!-- RSA -->
+  <h2>21 января, 2026</h2>
+  <p><strong>Задача по алгоритму RSA</strong></p>
+  <p>1. Простые числа: p = 5, q = 7<br>
+     2. n = p × q = 35<br>
+     3. φ(n) = (p − 1)(q − 1) = 24<br>
+     4. Выбрано e = 5 → НОД(5, 24) = 1 ✅<br>
+     5. Найдено d = 5, так как (5 × 5) mod 24 = 1</p>
+  <p>🗝️ Ключи:<br>
+     &nbsp;&nbsp;Открытый ключ: (n, e) = (35, 5)<br>
+     &nbsp;&nbsp;Закрытый ключ: (n, d) = (35, 5)</p>
+  <p>📩 Сообщение: m = 2<br>
+     🔒 Шифрование: C = m<sup>e</sup> mod n = 2<sup>5</sup> mod 35 = 32<br>
+     🔓 Расшифровка: M = C<sup>d</sup> mod n = 32<sup>5</sup> mod 35 = 2</p>
+
+  <hr>
+
+  <!-- Шифр Цезаря -->
+  <h2>17 января, 2026</h2>
+  <p class="date">Решение задачи по шифру Цезаря</p>
+  
+  <h3>1. Определение ключей шифра</h3>
+  <p><strong>а. АПЕЛЬСИН → САЦЬНВЩЮ</strong><br>
+     Ключ: <span class="result">k = 18</span></p>
+  <p><strong>б. АБРИКОС → ЫЬЛГЕЙМ</strong><br>
+     Ключ: <span class="result">k = 24</span></p>
+  <div class="note">⚠️ Примечание: В исходных данных возможны опечатки. Ключи определены по большинству позиций.</div>
+
+  <h3>2. Расшифровка сообщений</h3>
+  <p><strong>а. ФХНЗКЧ</strong> → <span class="result">ПРИВЕТ</span> (ключ k = 5)<br>
+     <strong>б. ЦЩЕБФ</strong> → <span class="result">АДОМЯ</span> (ключ k = 22)</p>
+  <div class="note">⚠️ "АДОМЯ" не является осмысленным словом. Вероятно, в условии задачи опечатка.</div>
+
+  <h3>3. Шифрование фамилии</h3>
+  <p>Фамилия: <strong>Родина</strong>, ключ <strong>k = 10</strong><br>
+     Результат: <span class="result">ЩЦНСХК</span></p>
+
+  <hr>
+
+  <!-- Доменные имена -->
+  <h2>12 января, 2026</h2>
+  <p class="date">Из чего состоит доменное имя?</p>
+  
+  <p>Доменные имена — это удобный способ обращения к серверам в интернете. Пример: <code>blog.service.example.com</code></p>
+  
+  <div class="note">⚠️ Используется условный домен <code>example.com</code> — зарезервирован для документации.</div>
+
+  <h3>Уровни доменной иерархии (справа налево)</h3>
+  <p><strong>1. Корневой домен (<code>.</code>)</strong><br>Неявная точка в конце любого домена.</p>
+  <p><strong>2. Домен верхнего уровня (TLD)</strong><br>Например: <code>.com</code>, <code>.org</code>, <code>.ru</code>.</p>
+  <p><strong>3. Домен второго уровня (SLD)</strong><br>Основное имя: <code>example</code> → <code>example.com</code>.</p>
+  <p><strong>4. Поддомены</strong><br>
+     <code>service.example.com</code> — сервис<br>
+     <code>blog.service.example.com</code> — блог внутри сервиса</p>
+
+  <h3>Визуальная структура</h3>
+  <pre>.
+└── com
+    └── example
+        └── service
+            └── blog</pre>
+
+  <h3>Зачем это знать?</h3>
+  <ul>
+    <li>Для настройки DNS и хостинга</li>
+    <li>Для организации микросервисной архитектуры</li>
+    <li>Для повышения безопасности</li>
+    <li>Чтобы лучше понимать, как работает интернет!</li>
+  </ul>
+
+  <hr>
+
+  <!-- Блог: декабрь 2025 -->
+  <h2>15 декабря, 2025</h2>
+  <p>Поздравление с Наступающим Рождеством — читайте <a href="Kolyadka.odt">здесь</a>.</p>
+  <p>Видео:</p>
+  <video width="640" height="360" controls>
+    <source src="newTree.mp4" type="video/mp4">
+    Ваш браузер не поддерживает воспроизведение видео.
+  </video>
+
+  <h2>3 декабря, 2025</h2>
+  <img src="Icons/icons8.png" alt="Новый год">
+  <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+
+  <h2>15 октября, 2025</h2>
+  <p>Я сделала Новогодние кроссворды для сайта <a href="http://адрес сайта друга" title="Блог моего друга">Сайт моего друга</a>.</p>
+
+  <h2>1 сентября, 2025</h2>
+  <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
+  <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины.</p>
+
+  <hr>
+
+  <!-- FAQ бот -->
+  <h2>20 февраля, 2026</h2>
+  <p><strong>Вопрос пользователя:</strong> Где оплатить?</p>
+  <p><strong>Найден FAQ-вопрос:</strong> Можно ли вернуть товар обратно? (sim=0.684)</p>
+  <p><strong>Ответ бот-FAQ:</strong> Да, возврат возможен в течение 14 дней.</p>
+
+  <footer>
+    <p>© 2026 • Мой блог • Размещён на GitHub Pages</p>
+    <p>Последнее обновление: 28.03.2026</p>
+  </footer>
+
+</body>
+</html>
